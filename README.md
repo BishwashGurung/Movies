@@ -1,0 +1,1 @@
+An API made using java, spring framework. It uses mongoDB for database. Have endpoints for getting all movies list, particular movie based on its imdb Id and posting reviews using post method. Only BACKEND.
