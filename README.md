@@ -11,5 +11,5 @@ The Movie Review API provides endpoints for accessing movie information and post
 
 ## Technologies Used
 - Java Programming Language
-- Spring Framework
+- Spring boot 
 - MongoDB Database
