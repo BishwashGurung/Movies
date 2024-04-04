@@ -1,4 +1,4 @@
-package dev.bishwash.movies;
+package dev.bishwash.movies.review;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,8 +13,13 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/v1/reviews")
 public class ReviewController {
+    private final ReviewService reviewService;
+
     @Autowired
-    private ReviewService reviewService;
+    ReviewController(ReviewService reviewService) {
+        this.reviewService = reviewService;
+    }
+
     @PostMapping
     public ResponseEntity<Review> createReview(@RequestBody Map<String, String> payload) {
         return new ResponseEntity<>(reviewService.createReview(payload.get("reviewBody"), payload.get("imdbId")), HttpStatus.CREATED);

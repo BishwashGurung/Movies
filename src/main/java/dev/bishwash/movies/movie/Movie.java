@@ -1,5 +1,6 @@
-package dev.bishwash.movies;
+package dev.bishwash.movies.movie;
 
+import dev.bishwash.movies.review.Review;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

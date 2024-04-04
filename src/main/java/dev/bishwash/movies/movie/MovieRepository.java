@@ -1,5 +1,6 @@
-package dev.bishwash.movies;
+package dev.bishwash.movies.movie;
 
+import dev.bishwash.movies.movie.Movie;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

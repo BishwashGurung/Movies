@@ -1,5 +1,8 @@
-package dev.bishwash.movies;
+package dev.bishwash.movies.review;
 
+import dev.bishwash.movies.movie.Movie;
+import dev.bishwash.movies.review.Review;
+import dev.bishwash.movies.review.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -8,8 +11,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ReviewService {
+    private final ReviewRepository reviewRepository;
+
     @Autowired
-    private ReviewRepository reviewRepository;
+    ReviewService(ReviewRepository reviewRepository) {
+        this.reviewRepository = reviewRepository;
+    }
+
     @Autowired
     private MongoTemplate mongoTemplate;
     public Review createReview(String reviewBody, String imdbId) {

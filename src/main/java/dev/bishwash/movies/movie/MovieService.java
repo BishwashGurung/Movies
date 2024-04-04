@@ -1,6 +1,7 @@
-package dev.bishwash.movies;
+package dev.bishwash.movies.movie;
 
-import org.bson.types.ObjectId;
+import dev.bishwash.movies.movie.Movie;
+import dev.bishwash.movies.movie.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -8,8 +9,12 @@ import java.util.Optional;
 
 @Service
 public class MovieService {
+    private final MovieRepository movieRepository;
+
     @Autowired
-    private MovieRepository movieRepository;
+    MovieService(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
+    }
     public List<Movie> allMovies() {
         return movieRepository.findAll();
     }
